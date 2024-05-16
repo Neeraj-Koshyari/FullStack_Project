@@ -65,6 +65,11 @@
             color:white;
             width:80px;
         }
+        .del{
+            background-color: blue;
+            color:white;
+            width:80px;
+        }
         .button:hover{
             cursor: pointer;
             font-size:13px;
@@ -104,8 +109,11 @@
                         <td>'.$course.'</td>
                         <td>'.$email.'</td>
                         <td><button onclick="update('.$id.')" class="button submit">Update</button>
-                        <button onclick="validate('.$id.')" class="button cancel" >Dekete All</button></td>
+                        <button onclick="del('.$id.')" class="button del">Delete</button>
+                        <button onclick="validate('.$id.')" class="button cancel">Delete All</button></td>
                     </tr>';
+                    // <a href="update.php?UpdateId='.$id.'"></a>
+                    // <a href="DeleteAll.php?DeleteAllId='.$id.'">Delete ALL</a>
                     $val++;
                 }
             }
@@ -114,6 +122,9 @@
     <script>
         function update(id){
             window.location.href = "update.php?UpdateId="+id;
+        }
+        function del(id){
+            window.location.href = "delete.php?DeleteId="+id;
         }
         function validate(id){
             confirmation = confirm("Are You Sure??");
