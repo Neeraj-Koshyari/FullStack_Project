@@ -93,8 +93,8 @@
     <div class="main">
     <form method="post">
         <label class="margin" >Name: </label><input class="fill" type="text" value="<?php echo $name;?>" name="name" autocomplete="off" required><br><br>
-        <label class="margin" >Course: </label><input class="fill" type="text" value="<?php echo $course;?>" name="course" autocomplete="off"><br><br>
-        <label class="margin" >Email: </label><input class="fill" type="email" value="<?php echo $email;?>" name="email" autocomplete="off"><br><br>
+        <label class="margin" >Course: </label><input class="fill" type="text" value="<?php echo $course;?>" name="course" autocomplete="off" required><br><br>
+        <label class="margin" >Email: </label><input class="fill" type="email" value="<?php echo $email;?>" name="email" autocomplete="off" required><br><br>
         <input type="submit" name="update" value="Update" class="button submit">
     </form>
     <button class="button cancel" onclick="locate()">Cancel</button>
