@@ -6,6 +6,13 @@
     $result = mysqli_query($conn,$sql);
     $row = mysqli_fetch_assoc($result);
 
+    if(!$row){
+        echo "<script>alert('Record Not Found!!');
+        window.location.href = 'edit.php';
+        </script>";
+        // header("location:edit.php");
+    }
+
     $name = $row["Name"];
     $course = $row["Course"];
     $email = $row["Email"];
@@ -15,7 +22,7 @@
         $course = $_POST["course"];
         $email = $_POST["email"];
 
-        $sql = "UPDATE student SET Std_ID = $id, Name = '$name', Course = '$course', email = '$email' WHERE Std_ID = $id";
+        $sql = "UPDATE student SET Name = '$name', Course = '$course', email = '$email' WHERE Std_ID = $id";
 
         $result = mysqli_query($conn,$sql);
         if(!$result){
@@ -49,6 +56,7 @@
             margin-top:40px;
             padding:30px;
             width:500px;
+            height:300px;
             border: 2px solid black;
             background-color: #d5f4e6;
             font-weight: bold;
